@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  flask-mijn-afval-wijzer-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+      - MIJN_AFVAL_WIJZER_API_KEY=
+      - MINIMUM_COLLECTION_SIZE=6
+    ports:
+      - "8080:8080"
+
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
