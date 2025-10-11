@@ -10,7 +10,7 @@ jobs:
       tag: ${{ steps.vars.outputs.tag }}
       sha_short: ${{ steps.vars.outputs.sha_short }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Declare variables
         id: vars
         shell: bash
@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Convert GitHub username to lowercase
         id: lowercase
