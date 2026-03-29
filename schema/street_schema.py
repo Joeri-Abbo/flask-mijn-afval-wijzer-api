@@ -8,7 +8,7 @@ class StreetSchema(Schema):
     add_on = fields.String(required=False)
 
     @validates('zip_code')
-    def validate_zip_code(self, value):
+    def validate_zip_code(self, value, **kwargs):
         """
         Validate that the zip code is in the Dutch postal code format.
         """
